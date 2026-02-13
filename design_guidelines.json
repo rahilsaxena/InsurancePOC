@@ -1,0 +1,143 @@
+{
+  "brand_identity": {
+    "name": "INSpace",
+    "description": "Enterprise Insurance Risk Analytics Platform",
+    "archetype": "The Swiss & High-Contrast",
+    "emotional_tone": "Precise, Authoritative, Trustworthy, Data-Dense",
+    "theme_mode": "light",
+    "visual_style": "Enterprise SaaS with GIS focus"
+  },
+  "typography": {
+    "font_imports": [
+      "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Public+Sans:wght@400;500;600&display=swap"
+    ],
+    "headings": {
+      "family": "Barlow Condensed, sans-serif",
+      "weights": {
+        "default": "600",
+        "bold": "700"
+      },
+      "sizes": {
+        "h1": "text-3xl tracking-tight",
+        "h2": "text-2xl tracking-tight",
+        "h3": "text-xl tracking-tight"
+      }
+    },
+    "body": {
+      "family": "Public Sans, sans-serif",
+      "weights": {
+        "default": "400",
+        "medium": "500"
+      }
+    }
+  },
+  "colors": {
+    "primary": {
+      "name": "Navy Command",
+      "hex": "#0B1120",
+      "tailwind": "bg-[#0B1120] text-white"
+    },
+    "secondary": {
+      "name": "Slate Muted",
+      "hex": "#64748b",
+      "tailwind": "text-slate-500"
+    },
+    "accent": {
+      "name": "Electric Blue",
+      "hex": "#0ea5e9",
+      "tailwind": "text-sky-500"
+    },
+    "flood_zones": {
+      "primary": "#e8aeb3",
+      "secondary": "#bfe1ff",
+      "fringe": "#fff3bf"
+    },
+    "risk_levels": {
+      "high": "#ef4444",
+      "medium": "#f59e0b",
+      "low": "#22c55e"
+    },
+    "backgrounds": {
+      "app": "bg-slate-50",
+      "panel": "bg-white",
+      "header": "bg-[#0B1120]"
+    }
+  },
+  "layout": {
+    "structure": "Bento Grid Mode B (High Density)",
+    "grid_system": "grid grid-cols-12 h-[calc(100vh-64px)]",
+    "header": {
+      "height": "h-16",
+      "style": "fixed top-0 w-full z-50 bg-[#0B1120] text-white flex items-center px-6 shadow-md"
+    },
+    "sidebar_left": {
+      "width": "col-span-2",
+      "style": "bg-white border-r border-slate-200 h-full overflow-y-auto p-4 flex flex-col gap-6"
+    },
+    "main_content": {
+      "width": "col-span-8",
+      "style": "relative h-full bg-slate-100 overflow-hidden"
+    },
+    "sidebar_right": {
+      "width": "col-span-2",
+      "style": "bg-white border-l border-slate-200 h-full overflow-y-auto p-4"
+    },
+    "spacing": {
+      "panel_gap": "gap-4",
+      "internal_padding": "p-4"
+    }
+  },
+  "components": {
+    "map": {
+      "library": "react-leaflet",
+      "style": "h-full w-full z-0",
+      "tiles": "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+      "attribution": "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors &copy; <a href='https://carto.com/attributions'>CARTO</a>"
+    },
+    "charts": {
+      "library": "recharts",
+      "style": "minimalist, no grid lines, precise tooltips"
+    },
+    "ui_primitives": {
+      "library": "shadcn/ui",
+      "modifications": "Rounded-sm for enterprise feel, dense spacing"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "stroke-1.5 w-5 h-5"
+    }
+  },
+  "mock_data_requirements": {
+    "assets": "Generate 50-100 mock assets with lat/lng (clustered around a city like London or NY), TIV (Total Insured Value), Occupancy Type (Retail, Industrial, etc.), and Flood Risk Score.",
+    "kpi_metrics": "Total GIV ($5.2B), Total PnL (-$12M), Impacted GIV ($1.1B), Impacted PnL (-$4.5M), Asset Count (142)"
+  },
+  "image_urls": {
+    "hero_bg": "https://images.unsplash.com/photo-1769298084996-8ed5d3a72870?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjaXR5JTIwc2t5bGluZSUyMGFlcmlhbCUyMHZpZXd8ZW58MHx8fHwxNzcwOTg3Mjg5fDA&ixlib=rb-4.1.0&q=85",
+    "logo_placeholder": "https://placehold.co/40x40/0ea5e9/ffffff?text=IN"
+  },
+  "instructions_to_main_agent": [
+    "1. Install 'leaflet' and 'react-leaflet' immediately.",
+    "2. Create a 'Layout' component that implements the 12-column grid.",
+    "3. Build the 'MapComponent' using react-leaflet. Ensure it handles window resizing correctly.",
+    "4. Implement the 'KPIBar' as a floating or fixed element just below the header or within the main content top area.",
+    "5. Use 'Barlow Condensed' for all numeric values and headings to give it that 'Fintech/Analytics' look.",
+    "6. The 'Flood Layer' should be a toggleable Polygon layer on the map using the specific colors provided.",
+    "7. Ensure the Left Panel has a 'Collapsible' trigger to maximize map space.",
+    "8. Use 'sonner' for notifications (e.g., 'Filter Applied', 'Export Complete').",
+    "9. MOCK DATA IS CRITICAL. Create a robust 'mockData.js' file with realistic insurance values.",
+    "10. Do not use gradients for the header, stick to solid #0B1120."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) for floating panels over the map.",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms.",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions.",
+    "Use 2-3x more spacing than feels comfortable in the marketing sections, but KEEP IT DENSE for the Dashboard.",
+    "Prioritize using pre-existing components from src/components/ui when applicable."
+  ]
+}
