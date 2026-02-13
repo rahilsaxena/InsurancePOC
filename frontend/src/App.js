@@ -195,9 +195,9 @@ function App() {
               ${leftPanelCollapsed && rightPanelCollapsed ? 'col-span-12' : 
                 leftPanelCollapsed || rightPanelCollapsed ? 'col-span-10' : 
                 'col-span-8'}
-              h-full transition-all duration-300 relative
+              h-full transition-all duration-300 relative z-0
             `}
-            style={{ minWidth: '700px' }}
+            style={{ minWidth: '700px', pointerEvents: 'auto' }}
             data-testid="map-container"
           >
             <MapView
