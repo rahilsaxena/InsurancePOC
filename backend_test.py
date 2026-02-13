@@ -170,7 +170,7 @@ class INSpaceAPITester:
                      validate_response=self.validate_assets_response)
         
         # Test specific asset (using first asset from mock data)
-        self.run_test("Get Specific Asset", "GET", "assets/FACT-00001")
+        self.run_test("Get Specific Asset", "GET", "assets/COMM-00001")
         
         # Test asset search
         self.run_test("Search Assets", "GET", "assets/search/FACT")
