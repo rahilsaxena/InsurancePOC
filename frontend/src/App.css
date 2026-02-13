@@ -1,34 +1,224 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* INSpace Insurance Risk Analytics Platform */
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Public+Sans:wght@400;500;600&display=swap');
+
+/* App container */
+.App {
+  font-family: 'Public Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Barlow Condensed for headings and numbers */
+.font-barlow {
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Leaflet map overrides */
+.leaflet-container {
+  font-family: 'Public Sans', sans-serif;
+  background: #f1f5f9;
 }
 
-.App-link {
-    color: #61dafb;
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.leaflet-popup-content {
+  margin: 0;
+  font-family: 'Public Sans', sans-serif;
+}
+
+.leaflet-popup-tip {
+  background: white;
+}
+
+/* Custom popup styles for flood zones */
+.flood-popup .leaflet-popup-content-wrapper {
+  padding: 0;
+}
+
+.flood-popup .leaflet-popup-content {
+  width: auto !important;
+}
+
+/* Hide default leaflet attribution styling */
+.leaflet-control-attribution {
+  display: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Panel transitions */
+.panel-transition {
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+/* KPI card hover effects */
+.kpi-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Asset marker pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.asset-marker-selected {
+  animation: pulse 2s infinite;
+}
+
+/* Flood zone legend patterns */
+.legend-pattern-diagonal {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.5) 2px,
+    rgba(255, 255, 255, 0.5) 4px
+  );
+}
+
+.legend-pattern-dots {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+/* Accessibility - High contrast mode */
+@media (prefers-contrast: high) {
+  .leaflet-popup-content-wrapper {
+    border: 2px solid #000;
+  }
+  
+  .kpi-card {
+    border: 1px solid #000;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles can be added here */
+}
+
+/* Print styles */
+@media print {
+  .leaflet-control-zoom,
+  .leaflet-control-layers {
+    display: none !important;
+  }
+  
+  .App {
+    background: white;
+  }
+}
+
+/* Grid layout fixes for responsive behavior */
+.grid-cols-12 > [class*="col-span-0"] {
+  width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+}
+
+/* Slider custom styles */
+.slider-track {
+  background: linear-gradient(to right, #e2e8f0, #0ea5e9);
+}
+
+/* Button active states */
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Map container min-width override */
+[data-testid="map-container"] {
+  min-width: 700px;
+}
+
+/* Ensure proper z-index stacking */
+.leaflet-pane {
+  z-index: 400;
+}
+
+.leaflet-tile-pane {
+  z-index: 200;
+}
+
+.leaflet-overlay-pane {
+  z-index: 400;
+}
+
+.leaflet-marker-pane {
+  z-index: 600;
+}
+
+.leaflet-popup-pane {
+  z-index: 700;
 }
