@@ -222,3 +222,31 @@ input:focus-visible,
 .leaflet-popup-pane {
   z-index: 700;
 }
+
+/* Fix for asset marker click interaction */
+[data-testid="map-view"] {
+  position: relative;
+  z-index: 1;
+}
+
+[data-testid="map-container"] {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure leaflet interactive elements are clickable */
+.leaflet-interactive {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.leaflet-container {
+  z-index: 1;
+}
+
+/* Make sure map overlays don't block marker clicks */
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+path.leaflet-interactive {
+  pointer-events: auto !important;
+}
