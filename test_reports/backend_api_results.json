@@ -1,88 +1,88 @@
 {
   "summary": {
     "total_tests": 13,
-    "passed_tests": 12,
-    "success_rate": 92.3076923076923,
-    "timestamp": "2026-02-13T13:04:34.635068"
+    "passed_tests": 13,
+    "success_rate": 100.0,
+    "timestamp": "2026-02-13T13:04:56.300906"
   },
   "detailed_results": [
     {
       "test_name": "API Root Endpoint",
       "success": true,
       "details": "Status: 200 | Response received: 71 chars",
-      "timestamp": "2026-02-13T13:04:33.154924"
+      "timestamp": "2026-02-13T13:04:54.874994"
     },
     {
       "test_name": "Health Check",
       "success": true,
       "details": "Status: 200 | Response received: 70 chars",
-      "timestamp": "2026-02-13T13:04:33.296493"
+      "timestamp": "2026-02-13T13:04:54.979378"
     },
     {
       "test_name": "Get All Assets",
       "success": true,
       "details": "Status: 200 | Response validated successfully",
-      "timestamp": "2026-02-13T13:04:33.403107"
+      "timestamp": "2026-02-13T13:04:55.098745"
     },
     {
       "test_name": "Get Specific Asset",
-      "success": false,
-      "details": "Status: 404 | Expected 200 | Error: Asset not found",
-      "timestamp": "2026-02-13T13:04:33.508901"
+      "success": true,
+      "details": "Status: 200 | Response received: 364 chars",
+      "timestamp": "2026-02-13T13:04:55.212856"
     },
     {
       "test_name": "Search Assets",
       "success": true,
       "details": "Status: 200 | Response received: 3950 chars",
-      "timestamp": "2026-02-13T13:04:33.626703"
+      "timestamp": "2026-02-13T13:04:55.418731"
     },
     {
       "test_name": "Get All Flood Zones",
       "success": true,
       "details": "Status: 200 | Response validated successfully",
-      "timestamp": "2026-02-13T13:04:33.744293"
+      "timestamp": "2026-02-13T13:04:55.523071"
     },
     {
       "test_name": "Get Specific Flood Zone",
       "success": true,
       "details": "Status: 200 | Response received: 299 chars",
-      "timestamp": "2026-02-13T13:04:33.863664"
+      "timestamp": "2026-02-13T13:04:55.628184"
     },
     {
       "test_name": "Get Portfolio KPIs",
       "success": true,
       "details": "Status: 200 | Response validated successfully",
-      "timestamp": "2026-02-13T13:04:34.009251"
+      "timestamp": "2026-02-13T13:04:55.743201"
     },
     {
       "test_name": "Get Flood KPIs",
       "success": true,
       "details": "Status: 200 | Response validated successfully",
-      "timestamp": "2026-02-13T13:04:34.142783"
+      "timestamp": "2026-02-13T13:04:55.851861"
     },
     {
       "test_name": "Create Status Check",
       "success": true,
       "details": "Status: 200 | Response received: 120 chars",
-      "timestamp": "2026-02-13T13:04:34.292842"
+      "timestamp": "2026-02-13T13:04:55.978567"
     },
     {
       "test_name": "Get Status Checks",
       "success": true,
-      "details": "Status: 200 | Response received: 122 chars",
-      "timestamp": "2026-02-13T13:04:34.414435"
+      "details": "Status: 200 | Response received: 244 chars",
+      "timestamp": "2026-02-13T13:04:56.087789"
     },
     {
       "test_name": "Non-existent Asset",
       "success": true,
       "details": "Status: 404 | Response received: 29 chars",
-      "timestamp": "2026-02-13T13:04:34.524349"
+      "timestamp": "2026-02-13T13:04:56.193372"
     },
     {
       "test_name": "Non-existent Flood Zone",
       "success": true,
       "details": "Status: 404 | Response received: 34 chars",
-      "timestamp": "2026-02-13T13:04:34.634120"
+      "timestamp": "2026-02-13T13:04:56.300033"
     }
   ]
 }
